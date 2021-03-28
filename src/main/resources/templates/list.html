@@ -20,11 +20,19 @@
             <tr>
                 <!-- TODO #2: Complete the View Jobs By Category Table. -->
 
-                <td></td> <!-- Feel free to remove or modify this element if necessary. -->
+                <td>
+                    <ul>
+                        <li><a th:href="@{/list/jobs(column=${all},value=${All})}">View All</a></li>
 
+                    </ul>
+                </td>
+
+<!--               How is this iterating over entire HashMap, and not the keySet or values?-->
                 <td th:each="category : ${tableChoices}">
                     <ul>
+<!--                        Why is this iterating over category.value, and not category.values?-->
                         <li th:each="item : ${category.value}">
+<!--                            Clickable item in list with link path to job data display-->
                             <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>
                         </li>
                     </ul>
