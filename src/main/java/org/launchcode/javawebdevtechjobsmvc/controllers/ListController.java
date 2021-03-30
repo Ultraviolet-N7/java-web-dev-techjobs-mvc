@@ -21,6 +21,7 @@ public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
+    static String allJobs = "all";
 
     public ListController () {
 
@@ -46,6 +47,7 @@ public class ListController {
         model.addAttribute("positions", JobData.getAllPositionTypes());
         model.addAttribute("skills", JobData.getAllCoreCompetency());
         model.addAttribute("all", columnChoices.get("all"));
+        model.addAttribute("allJobs", allJobs);
 
         return "list";
     }
